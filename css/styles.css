@@ -1,3 +1,4 @@
+/* --- Base Styles --- */
 body {
   font-family: "Roboto", sans-serif;
   color: #434455;
@@ -37,7 +38,9 @@ img {
   overflow: hidden;
 }
 
-
+/* --- Common Components (CONTAINER) --- */
+/* Mobile First: max-width 428px is okay IF max-width: 100% is default, 
+   but specific breakpoints usually want min-width */
 .container {
   min-width: 320px;
   max-width: 428px;
@@ -45,14 +48,14 @@ img {
   margin: 0 auto;
 }
 
-
+/* Tablet Container */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
 }
 
-
+/* Desktop Container */
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
@@ -70,9 +73,10 @@ img {
   }
 }
 
-
+/* --- HEADER --- */
 .page-header {
   border-bottom: 1px solid #e7e9fc;
+  /* Add shadow as requested */
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 
               0px 1px 1px rgba(46, 47, 66, 0.16), 
               0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -84,12 +88,10 @@ img {
   justify-content: space-between;
 }
 
-
 .nav-list,
 .address {
   display: none;
 }
-
 
 .logo {
   font-family: "Raleway", sans-serif;
@@ -106,7 +108,7 @@ img {
   color: #2e2f42;
 }
 
-
+/* Open Menu Button (Mobile Only) */
 .open-menu-btn {
   padding: 0;
   line-height: 0;
@@ -118,7 +120,6 @@ img {
 .open-menu-icon {
   stroke: #2e2f42;
 }
-
 
 @media screen and (min-width: 768px) {
   .open-menu-btn {
@@ -191,7 +192,6 @@ img {
   }
 }
 
-
 @media screen and (min-width: 1158px) {
   .logo {
     margin-right: 76px;
@@ -209,10 +209,11 @@ img {
   }
 }
 
-
+/* --- HERO SECTION --- */
 .hero {
   background-color: #2e2f42;
-  padding: 112px 0;
+  /* Mobile padding fix: 72px */
+  padding: 72px 0; 
   max-width: 1440px;
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -243,7 +244,8 @@ img {
   letter-spacing: 0.02em;
   color: #ffffff;
   text-align: center;
-  max-width: 320px;
+  /* Mobile width fix: ~216px (220px is safe) */
+  max-width: 220px;
   margin: 0 auto 72px;
   text-transform: capitalize;
 }
@@ -264,6 +266,8 @@ img {
   border-radius: 4px;
   margin: 0 auto;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* Button Shadow fix */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .hero-btn:hover,
@@ -271,6 +275,7 @@ img {
   background-color: #404bbf;
 }
 
+/* Tablet Hero */
 @media screen and (min-width: 768px) {
   .hero {
     padding: 112px 0;
@@ -301,6 +306,7 @@ img {
   }
 }
 
+/* Desktop Hero */
 @media screen and (min-width: 1158px) {
   .hero {
     padding: 188px 0;
@@ -328,7 +334,7 @@ img {
   }
 }
 
-
+/* --- FEATURES --- */
 .features-list {
   display: flex;
   flex-direction: column;
@@ -405,7 +411,7 @@ img {
   }
 }
 
-
+/* --- TEAM --- */
 .team {
   background-color: #f4f4fd;
 }
@@ -435,8 +441,9 @@ img {
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
+/* Team Padding Fix: 32px 16px */
 .team-container {
-  padding: 32px 0;
+  padding: 32px 16px;
 }
 
 .team-subtitle {
@@ -509,7 +516,7 @@ img {
   }
 }
 
-
+/* --- PORTFOLIO --- */
 .portfolio-title {
   font-size: 36px;
   line-height: 1.11;
@@ -609,6 +616,7 @@ img {
   }
 }
 
+/* --- FOOTER --- */
 .footer {
   background-color: #2e2f42;
   padding: 96px 0;
@@ -675,6 +683,7 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Footer Hover: #31d0aa */
 .footer-social-link:hover,
 .footer-social-link:focus {
   background-color: #31d0aa;
@@ -684,6 +693,7 @@ img {
   fill: #f4f4fd;
 }
 
+/* Footer Subscribe */
 .footer-subscribe-container {
   width: 100%;
 }
@@ -717,6 +727,14 @@ img {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   color: #ffffff;
+  /* Add transition */
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Footer Input Focus */
+.footer-input:focus {
+  border-color: #31d0aa;
+  outline: none;
 }
 
 .footer-label {
@@ -746,9 +764,10 @@ img {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Footer Button Hover #31d0aa */
 .footer-btn:hover,
 .footer-btn:focus {
-  background-color: #404bbf;
+  background-color: #31d0aa;
 }
 
 .footer-btn-icon {
@@ -809,8 +828,15 @@ img {
   .footer-social-container {
     margin-right: 80px;
   }
+  
+  /* Right align subscribe block */
+  .footer-subscribe-container {
+    margin-left: auto;
+    width: auto;
+  }
 }
 
+/* --- MOBILE MENU --- */
 .mobile-menu {
   position: fixed;
   top: 0;
@@ -820,13 +846,23 @@ img {
   background-color: #ffffff;
   z-index: 999;
   transform: translateX(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
+  /* Visibility Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .mobile-menu.is-open {
   transform: translateX(0);
+  /* Visible when open */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-container {
@@ -959,6 +995,7 @@ img {
   fill: #f4f4fd;
 }
 
+/* --- MODAL WINDOW --- */
 .backdrop {
   position: fixed;
   top: 0;
@@ -984,7 +1021,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 408px;
+  /* Mobile width fixed: 288px */
+  width: 288px; 
   min-height: 584px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -994,10 +1032,10 @@ img {
   padding: 72px 24px 24px 24px;
 }
 
-@media screen and (max-width: 428px) {
+/* Tablet + Desktop Modal Width */
+@media screen and (min-width: 768px) {
   .modal {
-    width: 95%; 
-    max-width: 392px;
+    width: 408px;
   }
 }
 
@@ -1023,11 +1061,19 @@ img {
 .modal-close-btn:focus {
   background-color: #404bbf;
   border: none;
+  /* Icon fill on hover */
   fill: #ffffff;
 }
 
 .modal-close-icon {
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #2e2f42; /* Default fill */
+}
+
+/* Hover state for icon inside button */
+.modal-close-btn:hover .modal-close-icon,
+.modal-close-btn:focus .modal-close-icon {
+  fill: #ffffff;
 }
 
 .modal-title {
@@ -1161,4 +1207,12 @@ img {
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
+  /* Shadow for Modal Btn */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover for Modal Btn */
+.modal-send-btn:hover, 
+.modal-send-btn:focus {
+  background-color: #404bbf;
 }
