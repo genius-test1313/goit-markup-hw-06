@@ -37,21 +37,18 @@ img {
   overflow: hidden;
 }
 
-
+/* ИСПРАВЛЕНИЕ: Убрали min-width, сделали max-width: 320px для мобильных */
 .container {
-  min-width: 320px;
-  max-width: 428px;
+  max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
 }
-
 
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
 }
-
 
 @media screen and (min-width: 1158px) {
   .container {
@@ -70,10 +67,8 @@ img {
   }
 }
 
-
 .page-header {
   border-bottom: 1px solid #e7e9fc;
-
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 
               0px 1px 1px rgba(46, 47, 66, 0.16), 
               0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -104,7 +99,6 @@ img {
 .logo-studio-header {
   color: #2e2f42;
 }
-
 
 .open-menu-btn {
   padding: 0;
@@ -206,7 +200,6 @@ img {
   }
 }
 
-
 .hero {
   background-color: #2e2f42;
   padding: 72px 0; 
@@ -268,7 +261,6 @@ img {
 .hero-btn:focus {
   background-color: #404bbf;
 }
-
 
 @media screen and (min-width: 768px) {
   .hero {
