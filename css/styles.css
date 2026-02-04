@@ -46,21 +46,18 @@ img {
 }
 
 /* --- Common Components (CONTAINER FIXED) --- */
-/* Mobile First: max-width 320px for phones to avoid scroll */
 .container {
-  max-width: 320px;
+  max-width: 320px; /* Виправлено: Максимум 320px для мобілок */
   padding: 0 16px;
   margin: 0 auto;
 }
 
-/* Tablet */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
 }
 
-/* Desktop */
 @media screen and (min-width: 1158px) {
   .container {
     max-width: 1158px;
@@ -112,7 +109,6 @@ img {
   color: #2e2f42;
 }
 
-/* Open Menu Button (Mobile Only) */
 .open-menu-btn {
   padding: 0;
   line-height: 0;
@@ -276,7 +272,6 @@ img {
   background-color: #404bbf;
 }
 
-/* Tablet Hero */
 @media screen and (min-width: 768px) {
   .hero {
     padding: 112px 0;
@@ -307,7 +302,6 @@ img {
   }
 }
 
-/* Desktop Hero */
 @media screen and (min-width: 1158px) {
   .hero {
     padding: 188px 0;
@@ -824,7 +818,7 @@ img {
     margin-right: 80px;
   }
   
-  /* Right alignment for subscription */
+  /* Right align subscribe block */
   .footer-subscribe-container {
     margin-left: auto;
     width: auto;
@@ -846,7 +840,6 @@ img {
               visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
-  /* Hidden state properties */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -854,7 +847,6 @@ img {
 
 .mobile-menu.is-open {
   transform: translateX(0);
-  /* Visible state properties */
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -1020,7 +1012,6 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  /* Mobile width fixed: 288px */
   width: 288px; 
   min-height: 584px;
   background: #fcfcfc;
@@ -1151,6 +1142,7 @@ img {
   border-color: #4d5ae5;
 }
 
+/* FIXING THE CHECKBOX LOGIC */
 .modal-field-checkbox {
   margin-bottom: 24px;
 }
@@ -1177,10 +1169,21 @@ img {
   margin-right: 8px;
 }
 
+/* Custom Checkbox Icon Styling */
+.check-icon {
+  opacity: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .modal-check:checked + .check-text .check-span {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
+}
+
+/* Show the check icon when checked */
+.modal-check:checked + .check-text .check-icon {
+  opacity: 1;
 }
 
 .check-link {
